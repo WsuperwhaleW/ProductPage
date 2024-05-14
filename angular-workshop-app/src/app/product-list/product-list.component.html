@@ -1,11 +1,22 @@
+
 <div class="product-list">
-    <div *ngFor="let product of products" class="product-card">
+  <div *ngFor="let product of paginatedProducts" class="product-card">
+    <!-- Your product display code here -->
     <h2>{{ product.name }}</h2>
-      <!--<p>{{ product.description }}</p>-->
-      <!--<p>Price: ${{ product.price }}</p>-->
-      <!--<p>Quantity: {{ product.quantity }}</p>-->
-      <!--<p>Category: {{ product.category }} > {{ product.subcategory }}</p>-->
-      <button [routerLink]="['product-detail', product.id]">Product Details</button>
-    </div>
+    <button [routerLink]="['product-detail', product.id]" class="product-button">Product Details</button>
+  </div>
+</div>
+  
+  <div class="pagination-controls">
+    <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+    <span> Page {{ currentPage }} of {{ totalPages }} </span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+  
+  <div class="page-buttons">
+    <button *ngFor="let page of [].constructor(totalPages); let i = index" 
+            (click)="goToPage(i + 1)">
+      {{ i + 1 }}
+    </button>
   </div>
   

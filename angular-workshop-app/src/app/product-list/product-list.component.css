@@ -16,7 +16,7 @@
     margin-top: 0;
 }
 
-button {
+.product-button {
     background-color: green;
     color: white;
     border: none;
@@ -29,4 +29,19 @@ button:hover {
     background-color: darkgreen;
 }
 
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+  
+.page-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+  
+.page-buttons button {
+    margin: 0 5px;
+}
   
